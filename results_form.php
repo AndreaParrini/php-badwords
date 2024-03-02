@@ -1,13 +1,14 @@
 <?php 
 
+$replaceParagraph = str_replace($_GET['badword'], '***' , $_GET['paragraph']);
 
 if (!isset($_GET['paragraph']) && !isset($_GET['badword'])) {
     echo 'error';
 }elseif (empty($_GET['paragraph']) || empty($_GET['badword'])){
     echo 'Attenzione, non hai inserito i campi richiesti';
 }else{
-    echo $_GET['paragraph'];
-    echo str_replace($_GET['badword'], '***' , $_GET['paragraph']);
+    echo $_GET['paragraph'] . " " . strlen($_GET['paragraph']);
+    echo $replaceParagraph . " " . strlen($replaceParagraph);
 }
 
 ?>
