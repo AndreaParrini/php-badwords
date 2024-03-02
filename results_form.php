@@ -27,7 +27,7 @@ if (isset($_GET['paragraph']) && isset($_GET['badword'])) {
             </div>
         <?php else : ?>
             <div class="border p-3">
-                <h4>paragrafo originale</h4>
+                <h4>Paragrafo originale</h4>
                 <p>
                     <?= $_GET['paragraph']; ?>
                 </p>

@@ -11,17 +11,16 @@
         <form action="./results_form.php" method="get">
             <div class="mb-3">
                 <label for="paragraph" class="form-label">insert a paragraph</label>        
-                <input type="text" class="form-control" name="paragraph" id="paragraph">
+                <textarea class="form-control" name="paragraph" id="paragraph"></textarea>
             </div>
             
             <div class="mb-3">
-                <label for="badword" class="form-label">insert a word to censure</label>        
+                <label for="badword" class="form-label">insert a word to replace</label>        
                 <input type="text" class="form-control" name="badword" id="badword">
             </div>
             
             <button type="submit" class="btn btn-primary">Send</button>
         </form>
     </div>
-    
 </body>
 </html>
