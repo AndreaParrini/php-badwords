@@ -1,15 +1,9 @@
 <?php 
 
-$replaceParagraph = str_replace($_GET['badword'], '***' , $_GET['paragraph']);
-
-if (!isset($_GET['paragraph']) && !isset($_GET['badword'])) {
-    echo 'error';
-}elseif (empty($_GET['paragraph']) || empty($_GET['badword'])){
-    echo 'Attenzione, non hai inserito i campi richiesti';
-}else{
-    echo $_GET['paragraph'] . " " . strlen($_GET['paragraph']);
-    echo $replaceParagraph . " " . strlen($replaceParagraph);
+if (isset($_GET['paragraph']) && isset($_GET['badword'])) {
+    $replaceParagraph = str_replace($_GET['badword'], '***' , $_GET['paragraph']);
 }
+
 
 ?>
 
@@ -22,6 +16,35 @@ if (!isset($_GET['paragraph']) && !isset($_GET['badword'])) {
     <title>Badwords</title>
 </head>
 <body>
-    
+    <div class="container p-3">
+        <?php if (!isset($_GET['paragraph']) || !isset($_GET['badword'])) : ?>
+            <div class="bg-danger text-light p-3">
+                <?= 'error'; ?>
+            </div>
+        <?php elseif (empty($_GET['paragraph']) || empty($_GET['badword'])) : ?>
+            <div class="bg-warning p-3">
+                <?= 'Attenzione, non hai inserito i campi richiesti' ?>
+            </div>
+        <?php else : ?>
+            <div class="border p-3">
+                <h4>paragrafo originale</h4>
+                <p>
+                    <?= $_GET['paragraph']; ?>
+                </p>
+                <span>
+                    <?= 'Lunghezza paragrafo =' . " " . strlen($_GET['paragraph']); ?>
+                </span>
+                
+            </div>
+            <div class="border p-3">
+                <h4>Paragrafo censurato</h4>
+                <p>
+                <?= $replaceParagraph ;?>
+                </p>
+                <?= 'Lunghezza paragrafo =' . " " . strlen($replaceParagraph);?>
+            </div>
+            
+        <?php endif; ?>
+    </div> 
 </body>
 </html>
