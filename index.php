@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container p-3">
-        <form action="./results_form.php" method="get">
+        <form action="./results_form.php" method="post">
             <div class="mb-3">
                 <label for="paragraph" class="form-label">insert a paragraph</label>        
                 <textarea class="form-control" name="paragraph" id="paragraph"></textarea>
